@@ -145,3 +145,21 @@ p11
 
 save_plot("FigureS1.pdf", p11, base_width=8, base_height=12)
 ```
+
+Plant size comparison
+
+```
+library(tidyverse)
+library(cowplot)
+
+df <- read.csv("~/Library/CloudStorage/Dropbox/Megan2024/Maria Tocora/Transcriptomics paper/Molecular Ecology revision/plant_ant_size.csv")
+
+lm <- lm(log(Colony.Size_Final)~log(Total.Domatia_Final), df)
+summary(lm)
+#plot(lm)
+
+p1 <- ggplot(data=df, aes(x=Total.Domatia_Final, y=Colony.Size_Final))+xlab("Domatia (no.)")+ylab("Colony size (no. workers)")+geom_point()+scale_x_log10()+scale_y_log10()+geom_smooth(method="lm")+theme_cowplot()
+p1
+
+save_plot("colony_size.pdf", p1)
+```
