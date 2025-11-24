@@ -67,7 +67,7 @@ summary(lm2)
 Anova(lm2, type=3)
 #plot(lm2)
 
-p2 <- ggplot(data=df)+geom_point(aes(x=activity.avg, y=herbivory.rank, color=bodyguard.cat), size=2)+theme_cowplot()+geom_smooth(aes(x=activity.avg, y=herbivory.rank),method="lm", se=FALSE, color="black")+scale_color_manual(values=fig_colors)+xlab("Ant bodyguards (mean no.)")+ylab("Herbivory (rank)")+theme(legend.position="none")+annotate(geom = "text", x=28, y=55, label=paste0("p = ", round(summary(lm2)$coefficients[2,4], 3)))
+p2 <- ggplot(data=df)+geom_point(aes(x=activity.avg, y=herbivory.rank, color=bodyguard.cat, shape=time2), size=3)+theme_cowplot()+geom_smooth(aes(x=activity.avg, y=herbivory.rank),method="lm", se=FALSE, color="black")+scale_color_manual(values=fig_colors)+xlab("Ant bodyguards (mean no.)")+ylab("Herbivory (rank)")+theme(legend.position="none")+annotate(geom = "text", x=28, y=55, label=paste0("p = ", round(summary(lm2)$coefficients[2,4], 3)))
 p2
 
 #Does herbivory differ between the two groups? 
