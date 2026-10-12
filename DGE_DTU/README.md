@@ -20,20 +20,74 @@ library(ComplexHeatmap)
 
 ### UpSet Plot
 ```
-mydata = read.csv("Final_geneSummary.csv")
+###UpSetPlot
+```{r echo=TRUE}
+setwd("~/Documents/Trancriptomics A. octoarticulatus/Graphs")
+###install.packages("ComplexUpset")
+library(ggplot2)
+library(ComplexUpset)
+mydata = read.csv("DGE_geneSummary.csv")
 Analysis = colnames(mydata)[2:4]
 
+
 upset(
-    mydata,
-    Analysis,
-    base_annotations=list(
-        'Intersection size'=intersection_size(
-            counts=FALSE,
-            mapping=aes(fill=A)
-        )
-    ),
-    width_ratio=0.1
+  mydata,
+  Analysis,
+  width_ratio = 0.15,
+  min_size = 5,
+  
+  # Drop legacy theme warnings
+  themes = list(default = theme()),
+  
+  # 1. TOP PANEL: Intersection sizes (Black bars, white background)
+  base_annotations = list(
+    'Intersection size' = intersection_size(
+      mapping = aes(fill = 'black_bars')
+    ) + 
+    scale_fill_manual(values = c('black_bars' = '#000000'), guide = 'none') +
+    theme(
+      panel.background = element_rect(fill = "white", color = NA),
+      plot.background = element_rect(fill = "white", color = NA),
+      panel.grid.major.y = element_line(color = "#e0e0e0", linetype = "solid"),
+      panel.grid.minor = element_blank()
+    )
+  ),
+  
+  # 2. SIDE PANEL: Set sizes (Black bars, white background)
+  set_sizes = upset_set_size(
+    mapping = aes(fill = 'black_bars')
+  ) + 
+  scale_fill_manual(values = c('black_bars' = '#000000'), guide = 'none') +
+  theme(
+    panel.background = element_rect(fill = "white", color = NA),
+    plot.background = element_rect(fill = "white", color = NA),
+    panel.grid.major.x = element_line(color = "#e0e0e0", linetype = "solid"),
+    panel.grid.minor = element_blank(),
+    axis.text.x = element_text(angle = 0, hjust = 0.5)
+  ),
+  
+  # 3. BOTTOM PANEL: Matrix Grid
+  matrix = intersection_matrix() + 
+    theme(
+      panel.background = element_rect(fill = "white", color = NA),
+      plot.background = element_rect(fill = "white", color = NA),
+      panel.grid.major.x = element_blank(),
+      axis.text.y = element_text(size = 11, face = "bold", color = "#000000")
+    )
+) & 
+# Apply global aesthetic white-out adjustments across the combined framework
+theme(
+  plot.background = element_rect(fill = "white", color = NA),
+  text = element_text(family = "sans")
 )
+
+
+# Calculate the total size for each group/set
+set_sizes <- colSums(mydata[, Analysis, drop = FALSE])
+
+# Print the result
+print(set_sizes)
+```
 ```
 
 ## __References__
