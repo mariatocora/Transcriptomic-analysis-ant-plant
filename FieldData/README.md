@@ -36,6 +36,30 @@ df$bodyguard.cat <- ifelse(df$plant %in% c(103, 199, 28, 207, 187, 18, 109), "Lo
 df$bodyguard.cat <- as.factor(df$bodyguard.cat)
 ```
 
+```{r load and clean data, warning=FALSE, message=FALSE}
+# Compute sensitivity/specificity across all count thresholds
+# Here we optimize using Youden's J Index
+perf_analysis <- optimal.cutpoints(
+  X = "activity.avg",             # Your raw count column name
+  status = "bodyguard.cat",          # Your binary outcome column name
+  tag.status = "High",              # The value representing the target event
+  tag.healthy = "Low",
+  data = data, 
+  direction = "<",             # "<" means higher counts indicate the event (status = High)
+  methods = "Youden"           # Optimization metric
+)
+
+# View the summary statistics and the optimal threshold
+summary(perf_analysis)
+
+sensitivity_table <- perf_analysis$Youden$Global$measures.acc[1]
+df_metrics <- as.data.frame(sensitivity_table)
+head(df_metrics)
+
+# Find the exact numeric cutoff chosen by the Youden method for the vertical line
+optimal_cutoff <- perf_analysis$Youden$Global$optimal.cutoff$cutoff[1]
+```
+
 Choose the colors used in the figures. 
 
 ```{r set figure colors, warning=FALSE, message=FALSE}
@@ -51,6 +75,10 @@ df_long <- gather(df, bioassay_minute, ants, min1:min5)
 df_long$bioassay_minute_numeric <- as.numeric(gsub(".*?([0-9]+).*", "\\1", df_long$bioassay_minute))
 
 p1 <- ggplot()+geom_line(data=df_long, aes(x=bioassay_minute_numeric, y=ants, group=plant), alpha=0.5, color="grey")+geom_line(data=subset(df_long, !is.na(bodyguard.cat)), aes(x=bioassay_minute_numeric, y=ants, color=bodyguard.cat, group=plant))+theme_cowplot()+xlab("Time (min.)")+ylab("Ant bodyguards (no.)")+labs(color="Bodyguard activity")+scale_color_manual(values=fig_colors)+theme(legend.position=c(0.1, 0.85))+scale_y_continuous(limits=c(0,50))
+p1
+
+### P1 updated with identifiers
+p1 <- ggplot()+geom_line(data=df_long, aes(x=bioassay_minute_numeric, y=ants, group=plant), alpha=0.5, color="grey")+geom_line(data=subset(df_long, !is.na(bodyguard.cat)), aes(x=bioassay_minute_numeric, y=ants, color=bodyguard.cat, group=plant))+ geom_text_repel(data = subset(df_long, !is.na(bodyguard.cat)) %>% slice_max(bioassay_minute_numeric, n = 5, with_ties = TRUE), aes(x=5, y=ants, label=plant), nudge_x = 0.1, direction = "y", hjust = 0, segment.color = "grey50") +theme_cowplot()+xlab("Time (min.)")+ylab("Ant bodyguards (no.)")+labs(color="Bodyguard activity")+scale_color_manual(values=fig_colors)+theme(legend.position=c(0.1, 0.85))+scale_y_continuous(limits=c(0,50)) + geom_hline(yintercept = 12,  linetype = "dotted", color = "red", linewidth = 0.8)
 p1
 
 #Does bodyguarding activity differ between the two groups? 
@@ -76,6 +104,21 @@ Anova(lm2, type=3)
 
 p2 <- ggplot(data=df)+geom_point(aes(x=activity.avg, y=herbivory.rank, color=bodyguard.cat), size=2)+theme_cowplot()+geom_smooth(aes(x=activity.avg, y=herbivory.rank),method="lm", se=FALSE, color="black")+scale_color_manual(values=fig_colors)+xlab("Ant bodyguards (mean no.)")+ylab("Herbivory (rank)")+theme(legend.position="none")+annotate(geom = "text", x=28, y=55, label=paste0("p = ", round(summary(lm2)$coefficients[2,4], 3)))
 p2
+
+df <- df %>%
+  mutate(
+    time2 = if_else(hms(time) < hms("12:00:00"), "morning", "afternoon")
+  )
+
+## Updated P2 with time of the day
+p2 <- ggplot(data=df)+geom_point(aes(x=activity.avg, y=herbivory.rank, color=bodyguard.cat, shape=time2), size=2)+theme_cowplot()+geom_smooth(aes(x=activity.avg, y=herbivory.rank),method="lm", se=FALSE, color="black")+scale_color_manual(values=fig_colors)+xlab("Ant bodyguards (mean no.)")+ylab("Herbivory (rank)")+theme(legend.position="none")+annotate(geom = "text", x=28, y=55, label=paste0("p = ", round(summary(lm2)$coefficients[2,4], 3)))
+p2
+
+# Stats
+r_square <- summary(lm2)$r.squared
+adj_r_square <- summary(lm2)$adj.r.squared
+# Extract Eta-Squared with its 95% Confidence Interval
+eta_squared(lm2, partial = FALSE) 
 
 #Does herbivory differ between the two groups? 
 lm3 <- lm(herbivory.rank~bodyguard.cat, data=df)
@@ -118,6 +161,16 @@ df$time.length.min <- time_length(df$time.fixed - hms("00:00:00"), unit = "minut
 lm4 <- lm(activity.avg~time.length.min+temp.c+dom.no+gh.mass.g+gh.species+gh.age, data=df)
 summary(lm4)
 Anova(lm4, type=3)
+
+### Stats
+model_stats <- summary(lm4)$coefficients
+print(model_stats)
+# Calculates the 95% CI bounds for your intercept and slopes
+conf_intervals <- confint(lm4, level = 0.95)
+print(conf_intervals)
+# Extracts the exact number of rows actually used to compute the regression
+n_sample <- nobs(lm4)
+print(n_sample)
 
 p5 <- ggplot(data=df)+geom_point(aes(x=time.fixed, y=activity.avg, color=bodyguard.cat))+geom_smooth(aes(x=time.fixed, y=activity.avg), method="lm", se=FALSE)+theme_cowplot()+scale_color_manual(values=fig_colors)+xlab("Time of day")+ylab("Ant bodyguards (no.)")+theme(legend.position="none")+scale_x_time(labels=scales::time_format("%H:%M"), limits=c(hms("8:00:00"), hms("18:00:00")))+annotate(geom = "text", x=hms("13:00:00"), y=30, label=paste0("p = ", round(Anova(lm4)[[4]][[1]], 3)))
 p5
