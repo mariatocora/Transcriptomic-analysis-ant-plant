@@ -164,7 +164,7 @@ ActivityVolcanoPlot
 
 Figure 2. Volcano plot with significant top genes in the activity analysis. 
 
-## __Caste_analysis__
+## __Caste_analysis (all workers)__
 With the following code I perform the analysis for the caste comparison. Please consider that I used as imput files the "caste_count_matrix.csv", and the samples information table "caste_samples.csv". The final databases "Caste_sigOE.csv" and "Caste_norm_OEsig.csv" are in the data folder.  
 
 ```{r Install and Load Packages}
