@@ -154,7 +154,7 @@ res2 <- results(dds, tidy=TRUE, contrast=c("treatment", "brood", "guard")) %>%
   tbl_df()
 res2
 
-##Vitellogenin 
+##Vitellogenesis
 ####write.csv(res2, file="caste(Activity)_res2.csv")
 which(grepl("g8459", res2$row))
 
@@ -163,7 +163,7 @@ tcounts <- t(log2((counts(dds[goi, ], normalized=TRUE, replaced=FALSE)+.5))) %>%
   merge(colData(dds), ., by="row.names") %>%
   gather(gene, expression, (ncol(.)-length(goi)+1):ncol(.))
 
-g8459 <- ggboxplot(tcounts, y = "expression", x = "activity.level", fill = "activity.level") +  labs(x="labour", y="Expression (log normalized counts)", title = "Vitellogenin", fill = "Activity level") + theme(plot.title = element_text(color="black", size=15, hjust = 0.5)) +  scale_y_continuous(limits=c(0, 13)) + theme(legend.position="none") + annotate(geom="text", x =1.5, y=8, label="p = 2.14E-06", color="black") + scale_x_discrete(limits = c("brood", "high", "low")) + scale_fill_manual(values = c("#ff1493", "#ffd500", "#0000ff")) + annotate(geom="text", x =2, y=10, label="p = 0.0001", color="black") + annotate(geom="text", x =2.5, y=8, label="p = n.s.", color="black") ##BvsH(2.14E-06)##BvsL(0.0001)
+g8459 <- ggboxplot(tcounts, y = "expression", x = "activity.level", fill = "activity.level") +  labs(x="labour", y="Expression (log normalized counts)", title = "Vitellogenesis", fill = "Activity level") + theme(plot.title = element_text(color="black", size=15, hjust = 0.5)) +  scale_y_continuous(limits=c(0, 13)) + theme(legend.position="none") + annotate(geom="text", x =1.5, y=8, label="p = 2.14E-06", color="black") + scale_x_discrete(limits = c("brood", "high", "low")) + scale_fill_manual(values = c("#ff1493", "#ffd500", "#0000ff")) + annotate(geom="text", x =2, y=10, label="p = 0.0001", color="black") + annotate(geom="text", x =2.5, y=8, label="p = n.s.", color="black") ##BvsH(2.14E-06)##BvsL(0.0001)
 g8459
 
 ##Where is the significant value? 
