@@ -291,6 +291,18 @@ set_sizes <- colSums(mydata[, Analysis, drop = FALSE])
 print(set_sizes)
 ```
 
+### Make multi-panel plot. 
+
+```{r multipanel plot, warning=FALSE, message=FALSE}
+
+#Assemble multi-panel figure
+MultiPanel <- plot_grid(p1, p2, p3, p4, labels="AUTO")
+MultiPanel
+
+#Save plot
+save_plot("Figure1.pdf", p4, base_width=8, base_height=6)
+```
+
 ### Supplementary: Visualization of top significant genes for Activity and Caste comparisons
 In this section I plotted the top differentially expressed genes considering a log2FoldChange equal to 2 and padj value of 10e-6 as cutoff parameters. I used the R package "EnhacedVolcano" (Blighe, et al., 2018). Please consider that the log transformed adjusted p-values are plotted on the y-axis and log2 fold change values on the x-axis. 
 
