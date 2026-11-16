@@ -1,4 +1,4 @@
-### Allomerus octoarticulatus field data for transcriptomics project
+## Allomerus octoarticulatus field data for transcriptomics project
 ---
 Tocora et al., 
 2026
