@@ -128,56 +128,47 @@ my_colour = list(activity.level = c(high = "#BA55D3", low = "#FFD700"))
 p1 <- pheatmap(norm_OEsig, color = heat.colors, cluster_rows = T, show_rownames=F,annotation= annotation, border_color=NA, fontsize = 10, scale="row", fontsize_row = 10, height=20, annotation_colors = my_colour, legend_labels = F, annotation_names_row = F, annotation_names_col = F)
 ```
 
+### Figure 2B-C
+```{r echo=TRUE}
+res2 <- results(dds, tidy=TRUE, contrast=c("activity.level", "high", "low")) %>%
+  arrange(padj, pvalue) %>%
+  tibble::as_tibble()
+res2
 
+# Figure 2B.
 
+#Metalloproteinase (g16223)
+##Where is the gene we want to plot? 
+which(grepl("g16223", res2$row))
+##plot the gene normalized counts
+library(ggpubr)
+goi <- res2$row[45]
+tcounts <- t(log2((counts(dds[goi, ], normalized=TRUE, replaced=FALSE)+.5))) %>%
+    merge(colData(dds), ., by="row.names") %>%
+    gather(gene, expression, (ncol(.)-length(goi)+1):ncol(.))
+p2 <- ggboxplot(tcounts, y = "expression", x = "activity.level", fill = "activity.level") +  labs(x="Bodyguard Activity", y="Expression (log normalized counts)", title = "Metalloproteinase", fill = "Activity level") + theme(plot.title = element_text(color="black", size=15, hjust = 0.5)) +  scale_fill_manual(values = alpha(c( "#ff1493", "#0000ff"), 0.4)) +  geom_jitter(aes(color = activity.level), width = 0.2, size = 2) + scale_color_manual(values = c("low" = "#ff1493", "high"  = "#0000ff")) + theme(legend.position="none") + annotate(geom="text", x =1.5, y=10, label="padj = 0.006", color="black")
 
-### Visualization of top significant genes
-In this section I plotted the top differentially expressed genes considering a log2FoldChange equal to 2 and padj value of 10e-6 as cutoff parameters. I used the R package "EnhacedVolcano" (Blighe, et al., 2018). Please consider that the log transformed adjusted p-values are plotted on the y-axis and log2 fold change values on the x-axis. 
+#check ylim in the tcounts dataframe
+###For no legend: theme(legend.position="none")
+##Where is the significant value? 
+sigOE["g16223",]
 
-```{r Install and Load Packages}
-keyvals <- ifelse(
-    res$log2FoldChange < -2 & res$padj < 10e-6, 'royalblue',
-      ifelse(res$log2FoldChange > 2 & res$padj < 10e-6, 'gold',
-        'black')) 
-  keyvals[is.na(keyvals)] <- 'black'
-  names(keyvals)[keyvals == 'gold'] <- 'Upregulated high active bodyguards'
-  names(keyvals)[keyvals == 'black'] <- 'NS/Only Log2 FC/Only p-value'
-  names(keyvals)[keyvals == 'royalblue'] <- 'Upregulated low active bodyguards'
-  
- ActivityVolcanoPlot <- EnhancedVolcano(res,
-    lab = rownames(res),
-    x = 'log2FoldChange',
-    y = 'pvalue',
-    selectLab = rownames(res)[which(names(keyvals) %in% c('Upregulated high active bodyguards', 'Upregulated low active bodyguards'))],
-    xlab = bquote(~Log[2]~ 'fold change'),
-    title = 'Activity Analysis',
-    pCutoff = 10e-6,
-    FCcutoff = 2.0,
-    pointSize = 4,
-    labSize = 4.5,
-    boxedLabels = TRUE,
-    colCustom = keyvals,
-    colAlpha = 1,
-    legendPosition = 'top',
-    legendLabSize = 15,
-    legendIconSize = 5.0,
-    drawConnectors = TRUE,
-    widthConnectors = 1.0,
-    colConnectors = 'black',
-    arrowheads = TRUE,
-    gridlines.major = FALSE,
-    gridlines.minor = FALSE,
-    border = 'partial',
-    borderWidth = 1.5,
-    borderColour = 'black')
-ActivityVolcanoPlot
+#Figure 2C. 
+#Chymotrypsin (g7229)
+##Where is the gene we want to plot? 
+which(grepl("g7229", res2$row))
+##plot the gene normalized counts
+library(ggpubr)
+goi <- res2$row[23]
+tcounts <- t(log2((counts(dds[goi, ], normalized=TRUE, replaced=FALSE)+.5))) %>%
+    merge(colData(dds), ., by="row.names") %>%
+    gather(gene, expression, (ncol(.)-length(goi)+1):ncol(.))
+p3 <- ggboxplot(tcounts, y = "expression", x = "activity.level", fill = "activity.level") +  labs(x="Bodyguard Activity", y="Expression (log normalized counts)", title = "Chymotrypsin 1-like", fill = "Activity level") + theme(plot.title = element_text(color="black", size=15, hjust = 0.5)) +scale_fill_manual(values = alpha(c( "#ff1493", "#0000ff"), 0.4)) +  geom_jitter(aes(color = activity.level), width = 0.2, size = 2) + scale_color_manual(values = c("low" = "#ff1493", "high"  = "#0000ff")) + theme(legend.position="none") + annotate(geom="text", x =1.5, y=13, label="padj = 0.001", color="black")
+##Where is the significant value? 
+sigOE["g7229",]
 ```
 
-![alt text](https://github.com/mariatocora/Transcriptomic-analysis-ant-plant/blob/main/DGE_analysis/Figures/Activity_Volcano_plot.png)
-
-Figure 2. Volcano plot with significant top genes in the activity analysis. 
-
-## __Caste_analysis (all workers)__
+## _Caste_analysis (all workers)_
 With the following code I perform the analysis for the caste comparison. Please consider that I used as imput files the "caste_count_matrix.csv", and the samples information table "caste_samples.csv". The final databases "Caste_sigOE.csv" and "Caste_norm_OEsig.csv" are in the data folder.  
 
 ```{r Install and Load Packages}
@@ -227,21 +218,123 @@ write.csv(sigOE, file="Caste_sigOE.csv")
 normalized_counts <- counts(dds, normalized=T) ###normalized counts
 norm_OEsig <- normalized_counts[rownames(sigOE),] ###Extract normalized expression for significant genes
 write.csv(norm_OEsig, file="Caste_norm_OEsig.csv")
-
-### Plot significant genes: 
-heat.colors <- brewer.pal(6, "Greys") ### Set a color palette
-annotation <- data.frame(treatment=coldata[,'treatment'], 
-                     row.names=rownames(coldata))
-my_colour = list(treatment = c(guard = "#1E90FF", brood = "#C0FF3E"))
-
-Heatmap <- pheatmap(norm_OEsig, color = heat.colors, cluster_rows = T, show_rownames=F,
-annotation= annotation, border_color=NA, fontsize = 10, scale="row",
-     fontsize_row = 10, height=20, annotation_colors = my_colour)
 ```
 
-![alt text](https://github.com/mariatocora/Transcriptomic-analysis-ant-plant/blob/main/DGE_analysis/Figures/Caste_heatmap.png)
+### Figure 2D - UpSet Plot
 
-Figure 3. Heatmap with significant genes in the caste analysis. Please consider the figure was edited. 
+```{r echo=TRUE}
+setwd("~/Documents/Trancriptomics A. octoarticulatus/Graphs")
+###install.packages("ComplexUpset")
+library(ggplot2)
+library(ComplexUpset)
+#mydata = read.csv("DGE_geneSummary.csv")
+mydata = read.csv("DGE_Summary.csv")
+Analysis = colnames(mydata)[9:11]
+
+
+p4 <- upset(
+  mydata,
+  Analysis,
+  width_ratio = 0.15,
+  min_size = 5,
+  
+  # Drop legacy theme warnings
+  themes = list(default = theme()),
+  
+  # 1. TOP PANEL: Intersection sizes (Black bars, white background)
+  base_annotations = list(
+    'Intersection size' = intersection_size(
+      mapping = aes(fill = 'black_bars')
+    ) + 
+    scale_fill_manual(values = c('black_bars' = '#000000'), guide = 'none') +
+    theme(
+      panel.background = element_rect(fill = "white", color = NA),
+      plot.background = element_rect(fill = "white", color = NA),
+      panel.grid.major.y = element_line(color = "#e0e0e0", linetype = "solid"),
+      panel.grid.minor = element_blank()
+    )
+  ),
+  
+  # 2. SIDE PANEL: Set sizes (Black bars, white background)
+  set_sizes = upset_set_size(
+    mapping = aes(fill = 'black_bars')
+  ) + 
+  scale_fill_manual(values = c('black_bars' = '#000000'), guide = 'none') +
+  theme(
+    panel.background = element_rect(fill = "white", color = NA),
+    plot.background = element_rect(fill = "white", color = NA),
+    panel.grid.major.x = element_line(color = "#e0e0e0", linetype = "solid"),
+    panel.grid.minor = element_blank(),
+    axis.text.x = element_text(angle = 0, hjust = 0.5)
+  ),
+  
+  # 3. BOTTOM PANEL: Matrix Grid
+  matrix = intersection_matrix() + 
+    theme(
+      panel.background = element_rect(fill = "white", color = NA),
+      plot.background = element_rect(fill = "white", color = NA),
+      panel.grid.major.x = element_blank(),
+      axis.text.y = element_text(size = 11, face = "bold", color = "#000000")
+    )
+) & 
+# Apply global aesthetic white-out adjustments across the combined framework
+theme(
+  plot.background = element_rect(fill = "white", color = NA),
+  text = element_text(family = "sans")
+)
+
+
+# Calculate the total size for each group/set
+set_sizes <- colSums(mydata[, Analysis, drop = FALSE])
+
+# Print the result
+print(set_sizes)
+```
+
+### Supplementary: Visualization of top significant genes for Activity and Caste comparisons
+In this section I plotted the top differentially expressed genes considering a log2FoldChange equal to 2 and padj value of 10e-6 as cutoff parameters. I used the R package "EnhacedVolcano" (Blighe, et al., 2018). Please consider that the log transformed adjusted p-values are plotted on the y-axis and log2 fold change values on the x-axis. 
+
+# Activity Comparison
+
+```{r Install and Load Packages}
+keyvals <- ifelse(
+    res$log2FoldChange < -2 & res$padj < 10e-6, 'royalblue',
+      ifelse(res$log2FoldChange > 2 & res$padj < 10e-6, 'gold',
+        'black')) 
+  keyvals[is.na(keyvals)] <- 'black'
+  names(keyvals)[keyvals == 'gold'] <- 'Upregulated high active bodyguards'
+  names(keyvals)[keyvals == 'black'] <- 'NS/Only Log2 FC/Only p-value'
+  names(keyvals)[keyvals == 'royalblue'] <- 'Upregulated low active bodyguards'
+  
+ ActivityVolcanoPlot <- EnhancedVolcano(res,
+    lab = rownames(res),
+    x = 'log2FoldChange',
+    y = 'pvalue',
+    selectLab = rownames(res)[which(names(keyvals) %in% c('Upregulated high active bodyguards', 'Upregulated low active bodyguards'))],
+    xlab = bquote(~Log[2]~ 'fold change'),
+    title = 'Activity Analysis',
+    pCutoff = 10e-6,
+    FCcutoff = 2.0,
+    pointSize = 4,
+    labSize = 4.5,
+    boxedLabels = TRUE,
+    colCustom = keyvals,
+    colAlpha = 1,
+    legendPosition = 'top',
+    legendLabSize = 15,
+    legendIconSize = 5.0,
+    drawConnectors = TRUE,
+    widthConnectors = 1.0,
+    colConnectors = 'black',
+    arrowheads = TRUE,
+    gridlines.major = FALSE,
+    gridlines.minor = FALSE,
+    border = 'partial',
+    borderWidth = 1.5,
+    borderColour = 'black')
+ActivityVolcanoPlot
+```
+# Caste Comparison
 
 ```{r Install and Load Packages}
    keyvals <- ifelse(
@@ -283,11 +376,7 @@ Figure 3. Heatmap with significant genes in the caste analysis. Please consider 
     borderColour = 'black)
     
  CasteVolcanoPlot
- ```
-
-![alt text](https://github.com/mariatocora/Transcriptomic-analysis-ant-plant/blob/main/DGE_analysis/Figures/Caste_Volcano_plot.png)
-
-Figure 4. Volcano plot with significant top genes in the activity analysis.  
+```
 
 ## __References__
 
