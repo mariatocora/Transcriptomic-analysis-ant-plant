@@ -1,4 +1,4 @@
-De novo transcriptome assembly and alignment 
+De novo transcriptome
 ===========================
 Tocora et al
 2026
@@ -19,6 +19,14 @@ CD-HIT.sh describes code to run the clustering program CD-HIT. CD-HIT clusters h
 salmon_indexing.sh was used to build a salmon index with a decoy-aware transcriptome file. The decoy we used was the genome of Wasmannia auropuctata (available here https://www.ncbi.nlm.nih.gov/genome/?term=txid64793[orgn]), a species closely related to Allomerus octoarticulatus, as the genome of A. octoarticulatus was not available.
 salmon_quant.sh was used to quantify the reads against the index for each sample.
 
+### BUSCO Validation
+
+run_BUSCO.sh describes code to assess genomic data quality by using BUSCO (Benchmarking Universal Single-Copy Orthologs) scores, which look for the presence or absence of highly conserved genes in an assembly. More information available at https://busco.ezlab.org/
+
+### rnaQUAST Validation
+
+run_rnaQUAST.sh describes code to access quast, a tool for evaluating RNA-Seq assemblies (Bushmanova, et al., 2016). Please considered I self-installed quast in order to run the program. For more information visit:  https://cab.spbu.ru/files/rnaquast/release2.2.1/manual.html
+
 ## __References__
 1. FastQC: Andrews, S. (2010). FastQC: A Quality Control Tool for High Throughput Sequence Data [Online]. Available
 online at: http://www.bioinformatics.babraham.ac.uk/projects/fastqc/
@@ -28,3 +36,6 @@ Bioinformatics, btu170
 4. CD-HIT: Huang, Y., Niu, B., Gao, Y., Fu, L., & Li, W. (2010). CD-HIT Suite: a web server for clustering and comparing biological sequences. Bioinformatics (Oxford, England), 26(5), 680–682. https://doi.org/10.1093/bioinformatics/btq003.
 5. CD-HIT: Li, W., & Godzik, A. (2006). Cd-hit: a fast program for clustering and comparing large sets of protein or nucleotide sequences. Bioinformatics (Oxford, England), 22(13),
 6. Patro, R., Duggal, G., Love, M. I., Irizarry, R. A., & Kingsford, C. (2017). Salmon provides fast and bias-aware quantification of transcript expression. Nature Methods.
+7. 1. BUSCO: Mosè Manni, Matthew R Berkeley, Mathieu Seppey, Felipe A Simão, Evgeny M Zdobnov, BUSCO Update: Novel and Streamlined Workflows along with Broader and Deeper Phylogenetic Coverage for Scoring of Eukaryotic, Prokaryotic, and Viral Genomes. Molecular Biology and Evolution, Volume 38, Issue 10, October 2021, Pages 4647–4654
+2. BUSCO: Manni, M., Berkeley, M. R., Seppey, M., & Zdobnov, E. M. (2021). BUSCO: Assessing genomic data quality and beyond. Current Protocols, 1, e323. doi: 10.1002/cpz1.323
+3. rnaQUAST: Bushmanova, E., Antipov, D., Lapidus, A., Suvorov, V. and Prjibelski, A.D., 2016. rnaQUAST: a quality assessment tool for de novo transcriptome assemblies. Bioinformatics, 32(14), pp.2210-2212.
