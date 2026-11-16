@@ -168,7 +168,7 @@ p3 <- ggboxplot(tcounts, y = "expression", x = "activity.level", fill = "activit
 sigOE["g7229",]
 ```
 
-## _Caste_analysis (all workers)_
+### Caste_analysis (all workers)
 With the following code I perform the analysis for the caste comparison. Please consider that I used as imput files the "caste_count_matrix.csv", and the samples information table "caste_samples.csv". The final databases "Caste_sigOE.csv" and "Caste_norm_OEsig.csv" are in the data folder.  
 
 ```{r Install and Load Packages}
@@ -294,7 +294,7 @@ print(set_sizes)
 ### Supplementary: Visualization of top significant genes for Activity and Caste comparisons
 In this section I plotted the top differentially expressed genes considering a log2FoldChange equal to 2 and padj value of 10e-6 as cutoff parameters. I used the R package "EnhacedVolcano" (Blighe, et al., 2018). Please consider that the log transformed adjusted p-values are plotted on the y-axis and log2 fold change values on the x-axis. 
 
-# Activity Comparison
+### Activity Comparison
 
 ```{r Install and Load Packages}
 keyvals <- ifelse(
@@ -334,7 +334,7 @@ keyvals <- ifelse(
     borderColour = 'black')
 ActivityVolcanoPlot
 ```
-# Caste Comparison
+### Caste Comparison
 
 ```{r Install and Load Packages}
    keyvals <- ifelse(
