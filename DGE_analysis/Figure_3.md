@@ -46,7 +46,6 @@ library(png)
 library(car)
 library(magick)
 library(lm.beta)
-library(UpSetR)
 library(ComplexHeatmap)
 ````
 
@@ -228,7 +227,9 @@ Virus_figures
 ###save_plot("Figure6New.pdf", Figure_3, base_width=10, base_height=7)
 ```
 ### Pannel I and J Caste Comparison data
-```{r echo=TRUE}
+With the following code I perform the analysis for the caste comparison. Please consider that I used as imput files the "caste_count_matrix.csv", and the samples information table "caste_samples.csv". The final databases "Caste_sigOE.csv" and "Caste_norm_OEsig.csv" are in the data folder.  
+
+```{r Install and Load Packages}
 countdata <- read.csv("CASTEgene_count_matrix_collapsedTranscriptomeWithDecoys.csv", header = TRUE, row.names = 1)
 coldata <- read.delim("caste_modified.txt", header = TRUE, row.names = 1)
 ddsFullCountTable <- DESeqDataSetFromMatrix(countData=round(countdata), 
@@ -241,6 +242,24 @@ as.data.frame(colData(dds))
 dds <- DESeq(dds)
 res <- results(dds)
 res
+```
+
+ddsFullCountTable: 
+- class: DESeqDataSet 
+- dim: 67613 12 
+- metadata(1): version
+- assays(1): counts
+- rownames(67613): g0 g1 ... g9998 g9999
+- rowData names(0):
+- colnames(12): sample4 sample5 ... sample19 sample20
+- colData names(13): plant.id treatment.code ... date time
+
+res: 
+- log2 fold change (MLE): treatment guard vs brood 
+- Wald test p-value: treatment guard vs brood 
+- DataFrame with 67613 rows and 6 columns
+
+```{r Install and Load Packages}
 ### Extracting significant differentially expressed genes
 res_ordered = res[order(res$pvalue),]
 head(res_ordered)
@@ -253,14 +272,20 @@ threshold <- res_ordered$padj < padj.cutoff & abs(res_ordered$log2FoldChange) > 
 length(which(threshold)) ### the vector has a length equal to the total number of significant genes in the dataset.
 res_ordered$threshold <- threshold 
 sigOE <- data.frame(subset(res_ordered, threshold==TRUE)) ## subsetting significant genes
-####write.csv(sigOE, file="Caste_sigOE.csv")
+write.csv(sigOE, file="Caste_sigOE.csv")
 normalized_counts <- counts(dds, normalized=T) ###normalized counts
 norm_OEsig <- normalized_counts[rownames(sigOE),] ###Extract normalized expression for significant genes
+write.csv(norm_OEsig, file="Caste_norm_OEsig.csv")
 ```
 
 ### Hymenoptaecin and Metallopeptidase
 
 ```{r echo=TRUE}
+res2 <- results(dds, tidy=TRUE, contrast=c("activity.level", "high", "low")) %>%
+  arrange(padj, pvalue) %>%
+  tibble::as_tibble()
+res2
+
 ###g68084_hymenoptaecin 
 which(grepl("g68084", res2$row))
 
