@@ -227,7 +227,6 @@ setwd("~/Documents/Trancriptomics A. octoarticulatus/Graphs")
 ###install.packages("ComplexUpset")
 library(ggplot2)
 library(ComplexUpset)
-#mydata = read.csv("DGE_geneSummary.csv")
 mydata = read.csv("DGE_Summary.csv")
 Analysis = colnames(mydata)[9:11]
 
