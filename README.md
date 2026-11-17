@@ -1,4 +1,4 @@
-Data analyses for Tocora et al: RNA-Seq finds viruses associated with mutualist quality in the Amazonian plant-ant Allomerus octoarticulatus
+Data analyses for Tocora et al: RNA-Seq finds viruses associated with mutualist quality in the Amazonian plant-ant _Allomerus octoarticulatus_
 ================
 Tocora et al., 2026
 
