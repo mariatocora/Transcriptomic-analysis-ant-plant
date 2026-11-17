@@ -9,8 +9,7 @@ Ant-plant symbioses are classic examples of mutualism in which ant “bodyguards
 ### Description of pipeline, relevant folders in parentheses:
  1.  De novo transcriptome (./De_novo_transcriptome/) 
   1.1  Samples alignment to a Decoy-aware transcriptome and counts quantification. Based on Patro et al (2017)
- 2.  De novo transcriptome annotation (./De_novo_transcriptome/Annotation)
+  1.2 De novo transcriptome annotation (./De_novo_transcriptome/Annotation)
  3.  Differential gene expression analysis (./DGE_analysis). Based on Love et al (2014) 
- 4. Phylogenetic analysis of virus (./Virus_phylo)
- 5. Field data analysis (.FieldData)
- 6. References (./references): References for methods used in the analyses. 
+ 4. Phylogenetic analysis of viral sequences (./Virus_phylogenetics)
+ 5. Field data analysis (./Field_data)
