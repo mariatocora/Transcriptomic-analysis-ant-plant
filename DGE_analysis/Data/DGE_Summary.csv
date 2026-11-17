@@ -1,0 +1,295 @@
+﻿GENE,HvsL,BvsH,BvsL,DE Analyses,Comparison,Upregulation,Viral,High-activity,Low-activity,Broodcare
+g3245,1,0,1,DGE (HvsL),HvsL + BvsL,Broodcare workers and High-activity Bodyguards,,1,0,1
+g7229,1,0,1,DGE (HvsL),HvsL + BvsL,Low-activity Bodyguards,,0,1,0
+g10981,0,1,1,DGE,BvsH + BvsL,High-activity + Low-activity Bodyguards,,1,1,0
+g1423,0,1,1,DGE,BvsH + BvsL,High-activity + Low-activity Bodyguards,,1,1,0
+g15134,0,1,1,DGE,BvsH + BvsL,High-activity + Low-activity Bodyguards,,1,1,0
+g24224,0,1,1,DGE,BvsH + BvsL,High-activity + Low-activity Bodyguards,,1,1,0
+g157,0,1,1,DGE,BvsH + BvsL,High-activity + Low-activity Bodyguards,,1,1,0
+g41100,0,1,1,DGE,BvsH + BvsL,High-activity + Low-activity Bodyguards,,1,1,0
+g48923,0,1,1,DGE,BvsH + BvsL,High-activity + Low-activity Bodyguards,,1,1,0
+g6874,0,1,1,DGE,BvsH + BvsL,High-activity + Low-activity Bodyguards,,1,1,0
+g6897,0,1,1,DGE,BvsH + BvsL,High-activity + Low-activity Bodyguards,,1,1,0
+g8463,0,1,1,DGE,BvsH + BvsL,High-activity + Low-activity Bodyguards,,1,1,0
+g9011,0,1,1,DGE,BvsH + BvsL,High-activity + Low-activity Bodyguards,,1,1,0
+g9196,0,1,1,DGE,BvsH + BvsL,High-activity + Low-activity Bodyguards,,1,1,0
+g1871,0,1,1,DGE,BvsH + BvsL,High-activity + Low-activity Bodyguards,,1,1,0
+g10980,0,1,1,DGE,BvsH + BvsL,High-activity + Low-activity Bodyguards,,1,1,0
+g16054,0,1,1,DGE,BvsH + BvsL,High-activity + Low-activity Bodyguards,,1,1,0
+g1,0,1,1,DGE,BvsH + BvsL,Broodcare workers,,0,0,1
+g10119,0,1,1,DGE,BvsH + BvsL,Broodcare workers,,0,0,1
+g1077,0,1,1,DGE,BvsH + BvsL,Broodcare workers,,0,0,1
+g11369,0,1,1,DGE,BvsH + BvsL,Broodcare workers,,0,0,1
+g1156,0,1,1,DGE,BvsH + BvsL,Broodcare workers,,0,0,1
+g11760,0,1,1,DGE,BvsH + BvsL,Broodcare workers,,0,0,1
+g11825,0,1,1,DGE,BvsH + BvsL,Broodcare workers,,0,0,1
+g12056,0,1,1,DGE,BvsH + BvsL,Broodcare workers,,0,0,1
+g13057,0,1,1,DGE,BvsH + BvsL,Broodcare workers,,0,0,1
+g13235,0,1,1,DGE,BvsH + BvsL,Broodcare workers,,0,0,1
+g13788,0,1,1,DGE,BvsH + BvsL,Broodcare workers,,0,0,1
+g1382,0,1,1,DGE,BvsH + BvsL,Broodcare workers,,0,0,1
+g1495,0,1,1,DGE,BvsH + BvsL,Broodcare workers,,0,0,1
+g15701,0,1,1,DGE,BvsH + BvsL,Broodcare workers,,0,0,1
+g15993,0,1,1,DGE,BvsH + BvsL,Broodcare workers,,0,0,1
+g16911,0,1,1,DGE,BvsH + BvsL,Broodcare workers,,0,0,1
+g1707,0,1,1,DGE,BvsH + BvsL,Broodcare workers,,0,0,1
+g23784,0,1,1,DGE,BvsH + BvsL,Broodcare workers,,0,0,1
+g26067,0,1,1,DGE,BvsH + BvsL,Broodcare workers,,0,0,1
+g2622,0,1,1,DGE,BvsH + BvsL,Broodcare workers,,0,0,1
+g2759,0,1,1,DGE,BvsH + BvsL,Broodcare workers,,0,0,1
+g2926,0,1,1,DGE,BvsH + BvsL,Broodcare workers,,0,0,1
+g3043,0,1,1,DGE,BvsH + BvsL,Broodcare workers,,0,0,1
+g19019,0,1,1,DGE,BvsH + BvsL,Broodcare workers,,0,0,1
+g32,0,1,1,DGE,BvsH + BvsL,Broodcare workers,,0,0,1
+g3224,0,1,1,DGE,BvsH + BvsL,Broodcare workers,,0,0,1
+g329,0,1,1,DGE,BvsH + BvsL,Broodcare workers,,0,0,1
+g3740,0,1,1,DGE,BvsH + BvsL,Broodcare workers,,0,0,1
+g3892,0,1,1,DGE,BvsH + BvsL,Broodcare workers,,0,0,1
+g3958,0,1,1,DGE,BvsH + BvsL,Broodcare workers,,0,0,1
+g3989,0,1,1,DGE,BvsH + BvsL,Broodcare workers,,0,0,1
+g4166,0,1,1,DGE,BvsH + BvsL,Broodcare workers,,0,0,1
+g4305,0,1,1,DGE,BvsH + BvsL,Broodcare workers,,0,0,1
+g4614,0,1,1,DGE,BvsH + BvsL,Broodcare workers,,0,0,1
+g4715,0,1,1,DGE,BvsH + BvsL,Broodcare workers,,0,0,1
+g482,0,1,1,DGE,BvsH + BvsL,Broodcare workers,,0,0,1
+g4947,0,1,1,DGE,BvsH + BvsL,Broodcare workers,,0,0,1
+g4967,0,1,1,DGE,BvsH + BvsL,Broodcare workers,,0,0,1
+g4981,0,1,1,DGE,BvsH + BvsL,Broodcare workers,,0,0,1
+g5108,0,1,1,DGE,BvsH + BvsL,Broodcare workers,,0,0,1
+g5273,0,1,1,DGE,BvsH + BvsL,Broodcare workers,,0,0,1
+g5301,0,1,1,DGE,BvsH + BvsL,Broodcare workers,,0,0,1
+g5480,0,1,1,DGE,BvsH + BvsL,Broodcare workers,,0,0,1
+g5483,0,1,1,DGE,BvsH + BvsL,Broodcare workers,,0,0,1
+g562,0,1,1,DGE,BvsH + BvsL,Broodcare workers,,0,0,1
+g5675,0,1,1,DGE,BvsH + BvsL,Broodcare workers,,0,0,1
+g6509,0,1,1,DGE,BvsH + BvsL,Broodcare workers,,0,0,1
+g658,0,1,1,DGE,BvsH + BvsL,Broodcare workers,,0,0,1
+g683,0,1,1,DGE,BvsH + BvsL,Broodcare workers,,0,0,1
+g7529,0,1,1,DGE,BvsH + BvsL,Broodcare workers,,0,0,1
+g13103,0,1,1,DGE,BvsH + BvsL,Broodcare workers,,0,0,1
+g829,0,1,1,DGE,BvsH + BvsL,Broodcare workers,,0,0,1
+g8459,0,1,1,DGE,BvsH + BvsL,Broodcare workers,,0,0,1
+g8464,0,1,1,DGE,BvsH + BvsL,Broodcare workers,,0,0,1
+g868,0,1,1,DGE,BvsH + BvsL,Broodcare workers,,0,0,1
+g869,0,1,1,DGE,BvsH + BvsL,Broodcare workers,,0,0,1
+g8467,0,1,1,DGE,BvsH + BvsL,Broodcare workers,,0,0,1
+g9809,0,1,1,DGE,BvsH + BvsL,Broodcare workers,,0,0,1
+g9996,0,1,1,DGE,BvsH + BvsL,Broodcare workers,,0,0,1
+g295,0,1,1,DGE,BvsH + BvsL,Broodcare workers,,0,0,1
+g1818,0,1,1,DGE,BvsH + BvsL,Broodcare workers,,0,0,1
+g643,0,1,1,DGE,BvsH + BvsL,Broodcare workers,,0,0,1
+g5767,0,1,1,DGE,BvsH + BvsL,Broodcare workers,,0,0,1
+g6169,0,1,1,DGE,BvsH + BvsL,Broodcare workers,,0,0,1
+g13430,0,1,1,DGE,BvsH + BvsL,Broodcare workers,,0,0,1
+g17024,0,1,1,DGE,BvsH + BvsL,Broodcare workers,,0,0,1
+g10913,0,1,1,DGE,BvsH + BvsL,Broodcare workers,,0,0,1
+g1172,0,1,1,DGE,BvsH + BvsL,Broodcare workers,,0,0,1
+g2745,0,1,1,DGE,BvsH + BvsL,Broodcare workers,,0,0,1
+g2940,0,1,1,DGE,BvsH + BvsL,Broodcare workers,,0,0,1
+g508,0,1,1,DGE,BvsH + BvsL,Broodcare workers,,0,0,1
+g8242,0,1,1,DGE,BvsH + BvsL,Broodcare workers,,0,0,1
+g8960,0,1,1,DGE,BvsH + BvsL,Broodcare workers,,0,0,1
+g13589,1,1,1,DGE (HvsL),HvsL + BvsH + BvsL,Broodcare workers and High-activity Bodyguards,,1,0,1
+g13731,1,1,1,DGE (HvsL),HvsL + BvsH + BvsL,Broodcare workers and High-activity Bodyguards,,1,0,1
+g13743,1,1,1,DGE (HvsL),HvsL + BvsH + BvsL,Broodcare workers and High-activity Bodyguards,,1,0,1
+g20498,1,1,1,DGE (HvsL),HvsL + BvsH + BvsL,Broodcare workers and High-activity Bodyguards,,1,0,1
+g22293,1,1,1,DGE (HvsL),HvsL + BvsH + BvsL,Broodcare workers and High-activity Bodyguards,,1,0,1
+g5151,1,1,1,DGE (HvsL),HvsL + BvsH + BvsL,Broodcare workers and High-activity Bodyguards,,1,0,1
+g5823,1,1,1,DGE (HvsL),HvsL + BvsH + BvsL,Broodcare workers and High-activity Bodyguards,,1,0,1
+g6591,1,1,1,DGE (HvsL),HvsL + BvsH + BvsL,Broodcare workers and Low-activity Bodyguards,,0,1,1
+g6663,1,1,1,DGE (HvsL),HvsL + BvsH + BvsL,Broodcare workers and High-activity Bodyguards,,1,0,1
+g7216,1,1,1,DGE (HvsL),HvsL + BvsH + BvsL,Broodcare workers and High-activity Bodyguards,,1,0,1
+g8064,1,1,1,DGE (HvsL),HvsL + BvsH + BvsL,Broodcare workers and High-activity Bodyguards,,1,0,1
+g8173,1,1,1,DGE (HvsL),HvsL + BvsH + BvsL,Broodcare workers and High-activity Bodyguards,,1,0,1
+g9305,1,1,1,DGE (HvsL),HvsL + BvsH + BvsL,Broodcare workers and High-activity Bodyguards,,1,0,1
+g9792,1,1,1,DGE (HvsL),HvsL + BvsH + BvsL,Broodcare workers and High-activity Bodyguards,,1,0,1
+g5389,1,1,1,DGE (HvsL),HvsL + BvsH + BvsL,Broodcare workers and High-activity Bodyguards,,1,0,1
+g7219,1,1,1,DGE (HvsL),HvsL + BvsH + BvsL,Broodcare workers and High-activity Bodyguards,,1,0,1
+g5511,1,1,1,DGE (HvsL),HvsL + BvsH + BvsL,Broodcare workers and High-activity Bodyguards,,1,0,1
+g123,1,1,1,DGE (HvsL),HvsL + BvsH + BvsL,Broodcare workers and High-activity Bodyguards,,1,0,1
+g12874,1,1,0,DGE (HvsL),HvsL + BvsH,Broodcare workers and Low-activity Bodyguards,,0,1,1
+g17038,1,1,0,DGE (HvsL),HvsL + BvsH,Broodcare workers and Low-activity Bodyguards,,0,1,1
+g6602,1,1,0,DGE (HvsL),HvsL + BvsH,Broodcare workers and Low-activity Bodyguards,,0,1,1
+g8308,1,1,0,DGE (HvsL),HvsL + BvsH,Broodcare workers and Low-activity Bodyguards,,0,1,1
+g1894,1,0,0,DGE (HvsL),HvsL,High-activity Bodyguards,Viral,1,0,0
+g2855,1,0,0,DGE (HvsL),HvsL,High-activity Bodyguards,Viral,1,0,0
+g5994,1,0,0,DGE (HvsL),HvsL,High-activity Bodyguards,Viral,1,0,0
+g3684,1,0,0,DGE (HvsL),HvsL,High-activity Bodyguards,Viral,1,0,0
+g2275,1,0,0,DGE (HvsL),HvsL,High-activity Bodyguards,Viral,1,0,0
+g3814,1,0,0,DGE (HvsL),HvsL,High-activity Bodyguards,Viral,1,0,0
+g20928,1,0,0,DGE (HvsL),HvsL,High-activity Bodyguards,,1,0,0
+g6982,1,0,0,DGE (HvsL),HvsL,Low-activity Bodyguards,Viral,0,1,0
+g9141,1,0,0,DGE (HvsL),HvsL,Low-activity Bodyguards,Viral,0,1,0
+g24155,1,0,0,DGE (HvsL),HvsL,Low-activity Bodyguards,,0,1,0
+g16177,1,0,0,DGE (HvsL),HvsL,Low-activity Bodyguards,,0,1,0
+g6884,1,0,0,DGE (HvsL),HvsL,Low-activity Bodyguards,,0,1,0
+g12782,1,0,0,DGE (HvsL),HvsL,Low-activity Bodyguards,,0,1,0
+g6082,1,0,0,DGE (HvsL),HvsL,Low-activity Bodyguards,,0,1,0
+g11332,1,0,0,DGE (HvsL),HvsL,Low-activity Bodyguards,,0,1,0
+g6124,1,0,0,DGE (HvsL),HvsL,Low-activity Bodyguards,,0,1,0
+g16223,1,0,0,DGE (HvsL),HvsL,Low-activity Bodyguards,,0,1,0
+g1280,0,1,0,DGE,BvsH,High-activity Bodyguards,,1,0,0
+g164,0,1,0,DGE,BvsH,High-activity Bodyguards,,1,0,0
+g26785,0,1,0,DGE,BvsH,High-activity Bodyguards,,1,0,0
+g29392,0,1,0,DGE,BvsH,High-activity Bodyguards,,1,0,0
+g413,0,1,0,DGE,BvsH,High-activity Bodyguards,,1,0,0
+g5191,0,1,0,DGE,BvsH,High-activity Bodyguards,,1,0,0
+g6531,0,1,0,DGE,BvsH,High-activity Bodyguards,,1,0,0
+g8438,0,1,0,DGE,BvsH,High-activity Bodyguards,,1,0,0
+g10275,0,1,0,DGE,BvsH,Broodcare workers,,0,0,1
+g1048,0,1,0,DGE,BvsH,Broodcare workers,,0,0,1
+g10859,0,1,0,DGE,BvsH,Broodcare workers,,0,0,1
+g12996,0,1,0,DGE,BvsH,Broodcare workers,,0,0,1
+g1381,0,1,0,DGE,BvsH,Broodcare workers,,0,0,1
+g14080,0,1,0,DGE,BvsH,Broodcare workers,,0,0,1
+g14253,0,1,0,DGE,BvsH,Broodcare workers,,0,0,1
+g15782,0,1,0,DGE,BvsH,Broodcare workers,,0,0,1
+g15833,0,1,0,DGE,BvsH,Broodcare workers,,0,0,1
+g17163,0,1,0,DGE,BvsH,Broodcare workers,,0,0,1
+g17637,0,1,0,DGE,BvsH,Broodcare workers,,0,0,1
+g17942,0,1,0,DGE,BvsH,Broodcare workers,,0,0,1
+g20799,0,1,0,DGE,BvsH,Broodcare workers,,0,0,1
+g20880,0,1,0,DGE,BvsH,Broodcare workers,,0,0,1
+g21793,0,1,0,DGE,BvsH,Broodcare workers,,0,0,1
+g2226,0,1,0,DGE,BvsH,Broodcare workers,,0,0,1
+g2273,0,1,0,DGE,BvsH,Broodcare workers,,0,0,1
+g25699,0,1,0,DGE,BvsH,Broodcare workers,,0,0,1
+g25995,0,1,0,DGE,BvsH,Broodcare workers,,0,0,1
+g26577,0,1,0,DGE,BvsH,Broodcare workers,,0,0,1
+g26724,0,1,0,DGE,BvsH,Broodcare workers,,0,0,1
+g27103,0,1,0,DGE,BvsH,Broodcare workers,,0,0,1
+g2732,0,1,0,DGE,BvsH,Broodcare workers,,0,0,1
+g33510,0,1,0,DGE,BvsH,Broodcare workers,,0,0,1
+g3978,0,1,0,DGE,BvsH,Broodcare workers,,0,0,1
+g4234,0,1,0,DGE,BvsH,Broodcare workers,,0,0,1
+g5065,0,1,0,DGE,BvsH,Broodcare workers,,0,0,1
+g5073,0,1,0,DGE,BvsH,Broodcare workers,,0,0,1
+g52588,0,1,0,DGE,BvsH,Broodcare workers,,0,0,1
+g6490,0,1,0,DGE,BvsH,Broodcare workers,,0,0,1
+g656,0,1,0,DGE,BvsH,Broodcare workers,,0,0,1
+g66062,0,1,0,DGE,BvsH,Broodcare workers,,0,0,1
+g6715,0,1,0,DGE,BvsH,Broodcare workers,,0,0,1
+g6910,0,1,0,DGE,BvsH,Broodcare workers,,0,0,1
+g6983,0,1,0,DGE,BvsH,Broodcare workers,,0,0,1
+g7620,0,1,0,DGE,BvsH,Broodcare workers,,0,0,1
+g7906,0,1,0,DGE,BvsH,Broodcare workers,,0,0,1
+g8183,0,1,0,DGE,BvsH,Broodcare workers,,0,0,1
+g8245,0,1,0,DGE,BvsH,Broodcare workers,,0,0,1
+g8422,0,1,0,DGE,BvsH,Broodcare workers,,0,0,1
+g9315,0,1,0,DGE,BvsH,Broodcare workers,,0,0,1
+g11844,0,1,0,DGE,BvsH,Broodcare workers,,0,0,1
+g14127,0,1,0,DGE,BvsH,High-activity Bodyguards,,1,0,0
+g14873,0,1,0,DGE,BvsH,High-activity Bodyguards,,1,0,0
+g1838,0,1,0,DGE,BvsH,Broodcare workers,,0,0,1
+g18584,0,1,0,DGE,BvsH,Broodcare workers,,0,0,1
+g23139,0,1,0,DGE,BvsH,High-activity Bodyguards,,1,0,0
+g26621,0,1,0,DGE,BvsH,Broodcare workers,,0,0,1
+g27808,0,1,0,DGE,BvsH,Broodcare workers,,0,0,1
+g31059,0,1,0,DGE,BvsH,Broodcare workers,,0,0,1
+g34531,0,1,0,DGE,BvsH,Broodcare workers,,0,0,1
+g38173,0,1,0,DGE,BvsH,Broodcare workers,,0,0,1
+g6037,0,1,0,DGE,BvsH,Broodcare workers,,0,0,1
+g8108,0,1,0,DGE,BvsH,Broodcare workers,,0,0,1
+g8148,0,1,0,DGE,BvsH,Broodcare workers,,0,0,1
+g110,0,0,1,DGE,BvsL,Broodcare workers,,0,0,1
+g18140,0,0,1,DGE,BvsL,Broodcare workers,,0,0,1
+g25125,0,0,1,DGE,BvsL,Broodcare workers,,0,0,1
+g35603,0,0,1,DGE,BvsL,Broodcare workers,,0,0,1
+g8104,0,0,1,DGE,BvsL,Broodcare workers,,0,0,1
+g11859,0,0,1,DGE,BvsL,Broodcare workers,,0,0,1
+g17686,0,0,1,DGE,BvsL,Broodcare workers,,0,0,1
+g872,0,0,1,DGE,BvsL,Broodcare workers,,0,0,1
+g3461,0,0,1,DGE,BvsL,Broodcare workers,,0,0,1
+g4815,0,0,1,DGE,BvsL,Broodcare workers,,0,0,1
+g822,0,0,1,DGE,BvsL,Broodcare workers,,0,0,1
+g7845,0,0,1,DGE,BvsL,Broodcare workers,,0,0,1
+g8508,0,0,1,DGE,BvsL,Broodcare workers,,0,0,1
+g12493,0,0,1,DGE,BvsL,Low-activity Bodyguards,,0,1,0
+g11905,0,0,1,DGE,BvsL,Low-activity Bodyguards,,0,1,0
+g7743,0,0,1,DGE,BvsL,Low-activity Bodyguards,,0,1,0
+g15582,0,0,1,DGE,BvsL,Low-activity Bodyguards,,0,1,0
+g1494,0,0,1,DGE,BvsL,Low-activity Bodyguards,,0,1,0
+g2598,0,0,1,DGE,BvsL,Low-activity Bodyguards,,0,1,0
+g3023,0,0,1,DGE,BvsL,Low-activity Bodyguards,,0,1,0
+g6443,0,0,1,DGE,BvsL,Low-activity Bodyguards,,0,1,0
+g19862,0,0,1,DGE,BvsL,Low-activity Bodyguards,,0,1,0
+g30386,0,0,1,DGE,BvsL,Low-activity Bodyguards,,0,1,0
+g35380,0,0,1,DGE,BvsL,Low-activity Bodyguards,,0,1,0
+g5495,0,0,1,DGE,BvsL,Low-activity Bodyguards,,0,1,0
+g8320,0,0,1,DGE,BvsL,Low-activity Bodyguards,,0,1,0
+g8265,0,0,1,DGE,BvsL,Low-activity Bodyguards,,0,1,0
+g9192,0,0,1,DGE,BvsL,Low-activity Bodyguards,,0,1,0
+g11340,0,0,1,DGE,BvsL,Broodcare workers,,0,0,1
+g1567,0,0,1,DGE,BvsL,Broodcare workers,,0,0,1
+g9272,0,0,1,DGE,BvsL,Broodcare workers,,0,0,1
+g12341,0,0,1,DGE,BvsL,Broodcare workers,,0,0,1
+g14145,0,0,1,DGE,BvsL,Broodcare workers,,0,0,1
+g20826,0,0,1,DGE,BvsL,Broodcare workers,,0,0,1
+g2197,0,0,1,DGE,BvsL,Broodcare workers,,0,0,1
+g4674,0,0,1,DGE,BvsL,Broodcare workers,,0,0,1
+g4857,0,0,1,DGE,BvsL,Broodcare workers,,0,0,1
+g1078,0,0,1,DGE,BvsL,Broodcare workers,,0,0,1
+g1142,0,0,1,DGE,BvsL,Broodcare workers,,0,0,1
+g1286,0,0,1,DGE,BvsL,Broodcare workers,,0,0,1
+g147,0,0,1,DGE,BvsL,Broodcare workers,,0,0,1
+g2091,0,0,1,DGE,BvsL,Broodcare workers,,0,0,1
+g2861,0,0,1,DGE,BvsL,Broodcare workers,,0,0,1
+g4800,0,0,1,DGE,BvsL,Broodcare workers,,0,0,1
+g5791,0,0,1,DGE,BvsL,Broodcare workers,,0,0,1
+g7255,0,0,1,DGE,BvsL,Broodcare workers,,0,0,1
+g768,0,0,1,DGE,BvsL,Broodcare workers,,0,0,1
+g10712,0,0,1,DGE,BvsL,Broodcare workers,,0,0,1
+g11957,0,0,1,DGE,BvsL,Broodcare workers,,0,0,1
+g12963,0,0,1,DGE,BvsL,Broodcare workers,,0,0,1
+g13531,0,0,1,DGE,BvsL,Broodcare workers,,0,0,1
+g14156,0,0,1,DGE,BvsL,Broodcare workers,,0,0,1
+g16627,0,0,1,DGE,BvsL,Broodcare workers,,0,0,1
+g18527,0,0,1,DGE,BvsL,Broodcare workers,,0,0,1
+g23003,0,0,1,DGE,BvsL,Broodcare workers,,0,0,1
+g37213,0,0,1,DGE,BvsL,Broodcare workers,,0,0,1
+g41038,0,0,1,DGE,BvsL,Broodcare workers,,0,0,1
+g7372,0,0,1,DGE,BvsL,Broodcare workers,,0,0,1
+g7515,0,0,1,DGE,BvsL,Broodcare workers,,0,0,1
+g8125,0,0,1,DGE,BvsL,Broodcare workers,,0,0,1
+g9189,0,0,1,DGE,BvsL,Broodcare workers,,0,0,1
+g9742,0,0,1,DGE,BvsL,Broodcare workers,,0,0,1
+g9642,0,0,1,DGE,BvsL,Broodcare workers,,0,0,1
+g1628,0,0,1,DGE,BvsL,Low-activity Bodyguards,,0,1,0
+g5161,0,0,1,DGE,BvsL,Low-activity Bodyguards,,0,1,0
+g5489,0,0,1,DGE,BvsL,Low-activity Bodyguards,,0,1,0
+g14166,0,0,1,DGE,BvsL,Low-activity Bodyguards,,0,1,0
+g28489,0,0,1,DGE,BvsL,Low-activity Bodyguards,,0,1,0
+g68084,0,0,1,DGE,BvsL,Low-activity Bodyguards,,0,1,0
+g7369,0,0,1,DGE,BvsL,Low-activity Bodyguards,,0,1,0
+g14890,0,0,1,DGE,BvsL,Low-activity Bodyguards,,0,1,0
+g19974,0,0,1,DGE,BvsL,Low-activity Bodyguards,,0,1,0
+g4005,0,0,1,DGE,BvsL,Low-activity Bodyguards,,0,1,0
+g3242,0,0,1,DGE,BvsL,Low-activity Bodyguards,,0,1,0
+g4107,0,0,1,DGE,BvsL,Low-activity Bodyguards,,0,1,0
+g415,0,0,1,DGE,BvsL,Low-activity Bodyguards,,0,1,0
+g6937,0,0,1,DGE,BvsL,Low-activity Bodyguards,,0,1,0
+g7018,0,0,1,DGE,BvsL,Low-activity Bodyguards,,0,1,0
+g1039,0,0,1,DGE,BvsL,Low-activity Bodyguards,,0,1,0
+g3171,0,0,1,DGE,BvsL,Low-activity Bodyguards,,0,1,0
+g523,0,0,1,DGE,BvsL,Low-activity Bodyguards,,0,1,0
+g10104,0,0,1,DGE,BvsL,Low-activity Bodyguards,,0,1,0
+g18224,0,0,1,DGE,BvsL,Low-activity Bodyguards,,0,1,0
+g23888,0,0,1,DGE,BvsL,Low-activity Bodyguards,,0,1,0
+g43738,0,0,1,DGE,BvsL,Low-activity Bodyguards,,0,1,0
+g8057,0,0,1,DGE,BvsL,Low-activity Bodyguards,,0,1,0
+g18824,0,0,1,DGE,BvsL,Low-activity Bodyguards,,0,1,0
+g8225,0,0,1,DGE,BvsL,Low-activity Bodyguards,,0,1,0
+g18601,0,0,1,DGE,BvsL,Low-activity Bodyguards,,0,1,0
+g3884,0,0,1,DGE,BvsL,Broodcare workers,,0,0,1
+g12288,0,0,1,DGE,BvsL,Broodcare workers,,0,0,1
+g10896,0,0,1,DGE,BvsL,Broodcare workers,,0,0,1
+g12236,0,0,1,DGE,BvsL,Broodcare workers,,0,0,1
+g13218,0,0,1,DGE,BvsL,Broodcare workers,,0,0,1
+g28540,0,0,1,DGE,BvsL,Broodcare workers,,0,0,1
+g618,0,0,1,DGE,BvsL,Broodcare workers,,0,0,1
+g859,0,0,1,DGE,BvsL,Broodcare workers,,0,0,1
+g9745,0,0,1,DGE,BvsL,Broodcare workers,,0,0,1
+g99,0,0,1,DGE,BvsL,Broodcare workers,,0,0,1
+g991,0,0,1,DGE,BvsL,Broodcare workers,,0,0,1
+g7404,0,0,1,DGE,BvsL,Broodcare workers,,0,0,1
+g15365,0,0,1,DGE,BvsL,Broodcare workers,,0,0,1
