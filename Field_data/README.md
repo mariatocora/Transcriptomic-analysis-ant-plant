@@ -69,7 +69,7 @@ Choose the colors used in the figures.
 ```{r set figure colors, warning=FALSE, message=FALSE}
 fig_colors <- c("blue", "deeppink", "black")
 ```
-
+### Figure 1. 
 ## _Analysis of ant bodyguarding behavior_ 
 
 ```{r ant bodyguard behavior, warning=FALSE, message=FALSE}
