@@ -1,7 +1,6 @@
 ### Figure 5 - DGE comparison across broodcare workers and bodyguards 
 
-###Imput data 
-###CASTE(Broodcare workers vs high-quality)
+### CASTE(Broodcare workers vs high-quality)
 ```{r echo=TRUE}
 setwd("~/Documents/Trancriptomics A. octoarticulatus/DEAnalyses/DGE")
 countdata <- read.csv("caste(BROODvsHIGH)withDecoy.csv", header = TRUE, row.names = 1)
@@ -12,7 +11,7 @@ ddsFullCountTable <- DESeqDataSetFromMatrix(countData=round(countdata),
 ddsFullCountTable
 ```
 
-###CASTE(Broodcare workers vs low-quality)
+### CASTE(Broodcare workers vs low-quality)
 ```{r echo=TRUE}
 countdata <- read.csv("caste(BROODvsLOW)withDecoy.csv", header = TRUE, row.names = 1)
 coldata <- read.delim("caste(BROODvsLOW)_modified.txt", header = TRUE, row.names = 1)
@@ -22,8 +21,7 @@ ddsFullCountTable <- DESeqDataSetFromMatrix(countData=round(countdata),
 ddsFullCountTable
 ```
 
-##Differential expression analysis
-###CASTE
+### Differential expression analysis - CASTE
 ```{r echo=TRUE}
 dds <- ddsFullCountTable
 dds$treatment <- relevel(dds$treatment, "broodcare")
@@ -33,8 +31,8 @@ res <- results(dds)
 res
 ```
 
-##Extracting significant differentially expressed genes
-###CASTE(Broodcare workers vs high-quality)
+## Extracting significant differentially expressed genes
+### CASTE(Broodcare workers vs high-quality)
 ```{r echo=TRUE}
 ### Extracting significant differentially expressed genes
 res_ordered = res[order(res$pvalue),]
@@ -54,7 +52,7 @@ norm_OEsig <- normalized_counts[rownames(sigOE),] ###Extract normalized expressi
 ###write.csv(norm_OEsig, file="Caste(BroodcareVSBodyguards(high))_norm_OEsig.csv")
 ```
 
-###CASTE(Broodcare workers vs low-quality)
+### CASTE(Broodcare workers vs low-quality)
 ```{r echo=TRUE}
 ### Extracting significant differentially expressed genes
 res_ordered = res[order(res$pvalue),]
@@ -74,8 +72,8 @@ norm_OEsig <- normalized_counts[rownames(sigOE),] ###Extract normalized expressi
 ###write.csv(norm_OEsig, file="Caste(BroodcareVSBodyguards(low)_norm_OEsig.csv")
 ```
 
-###Plotting sig genes
-###CASTE(Broodcare workers vs high-quality)
+### Plotting sig genes
+### CASTE(Broodcare workers vs high-quality)
 ```{r echo=TRUE}
 ### Plot significant genes: 
 heat.colors <- brewer.pal(6, "Greys") ### Set a color palette
@@ -86,7 +84,7 @@ my_colour = list(treatment = c("bodyguard(high)" = "#0000ff", broodcare = "#ffd5
 HeatmapHvsB <- pheatmap(norm_OEsig, color = heat.colors, cluster_rows = T, show_rownames=F, annotation= annotation, border_color=NA, fontsize = 10, scale="row", fontsize_row = 10, height=20, legend_labels = F, annotation_names_row = F, annotation_colors = my_colour, annotation_names_col = F)
 ```
 
-###CASTE(Broodcare workers vs low-quality)
+### CASTE(Broodcare workers vs low-quality)
 ```{r echo=TRUE}
 ### Plot significant genes: 
 heat.colors <- brewer.pal(6, "Greys") ### Set a color palette
