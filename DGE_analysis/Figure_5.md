@@ -116,7 +116,7 @@ NES1
 ### Getting significant genes for all three treatments 
 
 ```{r echo=TRUE}
-countdata <- read.csv("Caste_count_matrix.csv", header = TRUE, row.names = 1)
+countdata <- read.csv("CASTEgene_count_matrix_collapsedTranscriptomeWithDecoys.csv", header = TRUE, row.names = 1)
 coldata <- read.delim("caste_modified.txt", header = TRUE, row.names = 1)
 ddsFullCountTable <- DESeqDataSetFromMatrix(countData=round(countdata), 
                                   colData=coldata, 
